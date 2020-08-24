@@ -1,31 +1,33 @@
-// Напиши скрипт проверки количества товаров на складе. Есть переменные total (количество товаров на складе) и ordered (единиц товара в заказе).
+// Напиши скрипт подсчета стоимости гравировки украшений.Для этого создай функцию
+// calculateEngravingPrice(message, pricePerWord) принимающую строку(в строке будут
+//      только слова и пробелы) и цену гравировки одного слова, и возвращающую цену
+// гравировки всех слов в строке.
 
-// Сравни эти значения и по результатам выведи:
+const calculateEngravingPrice = function (message, pricePerWord) {
+  // твой код
+};
 
-// Если в заказе указано число, превышающее количество товаров на складе, то выведи сообщение "На складе недостаточно твоаров!".
-// В другом случае выводи сообщение "Заказ оформлен, с вами свяжется менеджер".
-// Проверь работоспособность кода с разными значениями переменной ordered, например 20, 80 и 130.
+/*
+ * Вызовы функции для проверки работоспособности твоей реализации.
+ */
+console.log(
+  calculateEngravingPrice(
+    'Proin sociis natoque et magnis parturient montes mus',
+    10,
+  ),
+); // 80
 
-"use strict";
-const total = 100;
-const ordered = 50;
+console.log(
+  calculateEngravingPrice(
+    'Proin sociis natoque et magnis parturient montes mus',
+    20,
+  ),
+); // 160
 
-// Write code under this line
-const message =
-ordered > total
-    ? "На складе недостаточно товаров!"
-    : "Заказ оформлен, с вами свяжется менеджер";
+console.log(
+  calculateEngravingPrice('Donec orci lectus aliquam est magnis', 40),
+); // 240
 
-console.log(message);
-
-//если ordered равен 100
-// то значение message будет равно
-// 'Заказ оформлен, с вами свяжется менеджер'
-
-//если ordered равен 50
-// то значение message будет равно
-// 'Заказ оформлен, с вами свяжется менеджер'
-
-//если ordered равен 150
-// то значение message будет равно
-// 'На складе недостаточно товаров!'
+console.log(
+  calculateEngravingPrice('Donec orci lectus aliquam est magnis', 20),
+); // 120
