@@ -56,3 +56,48 @@
 
 
 // pop - удаляет один элемент в конце масива
+
+const stack = []; 
+
+//добавляем элемент в конце масива push
+
+stack.push(1);
+console.log(stack); // [1]
+
+stack.push(2);
+console.log(stack); //  [1, 2]
+
+stack.push(3);
+console.log(stack); // [1, 2, 3]
+
+//удаляем элемент в конце масива pop
+
+console.log(stack.pop());  // 3
+console.log(stack);        // [1, 2]
+
+console.log(stack.pop()); // 2
+console.log(stack)        // [1]
+
+console.log(stack.pop()); // 1
+console.log(stack);       // []
+
+console.log(stack.pop()); // undefined
+
+// shift - удаляет элемент из начала массива
+
+// unshift - добавляет элемент в начала массива
+
+// const clients = ['Mango', 'Ajax', 'Poly', 'Kiwi'];
+//  console.log(clients.shift());  //Mango
+//  console.log(clients);          // ["Ajax", "Poly", "Kiwi"]
+
+//  clients.unshift('Kiwi');
+//  console.log(clients)           // ["Kiwi", "Ajax", "Poly", "Kiwi"]
+
+                      // 5 - Метод slice()
+
+
+const clients = ['Mango', 'Ajax', 'Poly', 'Kiwi'];
+
+//  вернет новый масив в котором будут элементы с индексами от 1 до 2
+
