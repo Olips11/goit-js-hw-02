@@ -3,13 +3,8 @@
 //      только слова и пробелы) и цену гравировки одного слова, и возвращающую цену
 // гравировки всех слов в строке.
 
-const calculateEngravingPrice = function (message, pricePerWord) {
-  // твой код
-};
-
-/*
- * Вызовы функции для проверки работоспособности твоей реализации.
- */
+const calculateEngravingPrice = (message = '', pricePerWord = 0) =>
+  message.split(' ').length * pricePerWord;
 console.log(
   calculateEngravingPrice(
     'Proin sociis natoque et magnis parturient montes mus',
@@ -31,3 +26,5 @@ console.log(
 console.log(
   calculateEngravingPrice('Donec orci lectus aliquam est magnis', 20),
 ); // 120
+
+console.log(calculateEngravingPrice('Uno', 100)); // 100
