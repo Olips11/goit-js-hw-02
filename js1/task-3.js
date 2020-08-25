@@ -1,44 +1,34 @@
-// Напиши скрипт имитирующий авторизацию администратора в панели управления.
+// Задача 2 - 2
+// Подсчет стоимости гравировки украшений
+// Напиши скрипт подсчета стоимости гравировки украшений.Для этого создай функцию calculateEngravingPrice(message = "",
+//pricePerWord = 0) принимающую строку(в строке будут только слова и пробелы)
+//и цену гравировки одного слова, и возвращающую цену гравировки всех слов в строке.
 
-// Есть переменная message в которую будет записано сообщение о результате. При загрузке страницы у посетителя запрашивается пароль через prompt:
+// Для решения этой задачи не используйте циклы.Т.е.никаких for, while, do while, for of, for in, forEach или функциональных методов.
 
-// Если нажали Cancel, записать в message строку 'Отменено пользователем!'
-// В протовном случае, если введен пароль который совпадает со значением константы ADMIN_PASSWORD, записать в message строку 'Добро пожаловать!'
-// В противном случае, то есть если ни одно из предыдущих условий не выполнилось, записать в message строку 'Доступ запрещен, неверный пароль!'
-// После всех проверок вывести в alert значение переменной message.
-// const ADMIN_PASSWORD = 'jqueryismyjam';
-// let message;
+const calculateEngravingPrice = (message = '', pricePerWord = 0) =>
+  message.split(' ').length * pricePerWord;
 
-let userPassword = prompt('Введите пароль для авторизации');
+console.log(
+  calculateEngravingPrice(
+    'Proin sociis natoque et magnis parturient montes mus',
+    10,
+  ),
+); // 80
 
+console.log(
+  calculateEngravingPrice(
+    'Proin sociis natoque et magnis parturient montes mus',
+    20,
+  ),
+); // 160
 
+console.log(
+  calculateEngravingPrice('Donec orci lectus aliquam est magnis', 40),
+); // 240
 
-const ADMIN_PASSWORD = "jqueryismyjam";
+console.log(
+  calculateEngravingPrice('Donec orci lectus aliquam est magnis', 20),
+); // 120
 
-const CANCELED_BY_USER = "Отменено пользователем!";
-const ACCESS_IS_ALLOWED = "Добро пожаловать!";
-const ACCESS_DENIED = "Доступ запрещен, неверный пароль!";
-let message;
-
-// Write code under this line
-if (userPassword === ADMIN_PASSWORD) {
-  message = ACCESS_IS_ALLOWED;
-} else if (userPassword === null) {
-  message = CANCELED_BY_USER;
-} else {
-  message = ACCESS_DENIED;
-}
-
-console.log(message);
-
-//если userPassword равно 'jqueryismyjam'
-// то значение message будет равно
-// 'Добро пожаловать!'
-
-//если userPassword равно  null
-// то значение message будет равно
-// 'Отменено пользователем!'
-
-//если userPassword равно '123'
-// то значение message будет равно
-// 'Доступ запрещен, неверный пароль!'
+console.log(calculateEngravingPrice('Uno', 100)); // 100
