@@ -1,3 +1,213 @@
+                    // 1. Массивы
+
+// const arr = [];
+
+// // Массив clients с тремя элементами
+
+// const clients = ['Mango', 'Poly', 'Ajax'];
+
+// console.log(clients); // ["Mango", "Poly", "Ajax"]
+
+
+                      
+                    // 3. Доступ к элементам
+                      
+
+// const clients = ['Mango', 'Poly', 'Ajax'];
+
+// console.log(clients[0]); // Mango
+// console.log(clients[1]); // Poly
+// console.log(clients[2]); // Ajax    
+
+
+                    // 4. Переопределение
+
+
+// const clients =  ['Mango', 'Poly', 'Ajax'];
+// // Значение элемента можно заменить
+// clients[0] = 'Kiwi'; // Kiwi
+
+// // Или добавить
+// clients[3] = 'Alex';
+// console.log(clients[3]); // Alex
+
+// console.log(clients); // ["Kiwi", "Poly", "Ajax", "Alex"]
+
+
+                   // 5. Длина массива
+
+
+// const clients = ['Mango', 'Poly', 'Ajax'];
+
+// // length вернет текущую длину массива
+// console.log(clients.length); // 3
+
+// clients.length = 5;
+// console.log(clients.length); // 5
+// console.log(clients); // ["Mango", "Poly", "Ajax", empty × 2]
+// console.log(clients[4]); // undefined
+
+// clients.length = 2;
+// console.log(clients); // ["Mango", "Poly"]
+
+
+                    // 6. Итерация по массиву
+// Для итерации по массиву или перебора массива, 
+// используются циклы, в частности цикл for. Переберем 
+// массив клиентов и выведем их имена.
+
+// const clients = ['Mango', 'Ajax', 'Poly',]
+
+// for (let i = 0; i < clients.length; i += 1){
+//     console.log('Logging clients: ', clients[i]);
+// }
+
+//  const numbers = [];
+
+//  for (let i = 0; i < 3; i += 1) {
+//      numbers.push(`label-${i}`)
+//  }
+
+//  console.log('numbers: ' , numbers); // ['label-0', 'label-1', 'label-2']
+                      
+
+
+                    //6.1. Цикл for...of
+//  variable — для каждой итерации значение 
+//     свойства присваивается переменной.
+//  iterable — коллекция, которая имеет 
+//      перечислимые свойства.
+
+// for (const variable of iterable) {
+//     // statement
+// }
+
+// Итерация по массиву
+// const clients = ['Mango', 'Ajax,', 'Poly'];
+
+// for (const client of clients) {
+//     console.log(client);
+// }
+// // Итерация по строке
+// const strihg = "javascript";
+// for (const character of strihg) {
+//     console.log(character)
+// }
+
+
+                    // 6.2. Инструкции break и continue
+
+
+// const clients = ['Mango', 'Poly', 'Ajax']
+// const clientNameToFind  = 'Poly';
+// let message;
+
+// for (const client of clients) {
+//     /*
+//    * На каждой итерации мы будем проверять совпадает ли элемент массива с
+//    * именем клиента. Если совпадает то мы записываем в message сообщение
+//    * об успехе и делаем break чтобы не искать дальше
+//    */
+//    if (client === clientNameToFind){
+//        message= 'Клиент с таким именем есть в базе данных!';
+//        break
+//    }
+//    // Если они не совпадают то запишем в resultMsg 
+// //    сообщeние об отсутсвии имени
+//    message = 'Клиента с таким именем нету в базе данных!';
+// }
+
+// console.log(message)
+
+
+// const clients = ['Mango', 'Poly', 'Ajax'];
+// const clientNameToFind = 'Poly';
+// let message = 'Клиента с таким именем нету в базе данных!';
+
+// for (const client of clients) {
+//     if (client === clientNameToFind) {
+//         message = 'Клиент с таким именем есть в базе данных!';
+//         break;
+//     }
+//       // Если не совпадает, то на этой итерации ничего не делаем
+// }
+
+// console.log(message) // Клиент с таким именем есть в базе данных!
+// /*
+//  * Для чисел меньше чем порог срабатывает continue, выполнение тела прекращается
+//  * и управление передаётся на следующую итерацию.
+//  */
+
+//  const numbers = [1, 3, 14, 18, 4, 7, 29, 6, 34];
+//  const threshold = 15;
+
+//  for (let i = 0; i < numbers.length; i += 1) {
+//      if (numbers[i] < threshold){
+//          continue;
+//      }
+//      console.log(`Число больше чем ${threshold}: ${numbers[i]}`) // 18, 29, 34
+//  }
+
+
+
+                        //  1. Присвоение по ссылке и по значению
+
+// Все примитивные типы присваиваются по значению, 
+// то есть создается копия.
+
+// let a = 5;
+// // Присвоение по значению, в памяти будет создана еще
+// // одна ячейка в которую будет скопировано значение 5
+// let b = a;
+// console.log(a);
+// console.log(b);
+
+// // Изменим значение a
+
+// a = 10
+// console.log(a); // 10
+// // Значение b не изменилось так как это отдельная копия
+
+// console.log(b); // 5
+
+
+// Сложные типы - объекты, массивы, функции 
+// присваиваются по ссылке, то есть переменная 
+// просто получает ссылку на уже существующий объект.
+
+const a = ['Mango'];
+// Присвоение по ссылке.
+// Так как a это массив, в b записывается ссылка на уже существующий
+// массив в памяти. Теперь a и b указывают на один и тот же массив.
+const b = a;
+console.log(a); // ['Mango']
+console.log(b); // ['Mango']
+// Изменим массив, добавив еще один элемент, используя указатель из a
+a.push('Poly');
+console.log(a); // ['Mango', 'Poly']
+// b изменилось тоже, потому что b, как и a,
+// просто содержат ссылку на одино и то же место в памяти
+console.log(b); // ['Mango', 'Poly']
+// Результат повторяется
+b.push('Ajax');
+console.log(a); // ['Mango', 'Poly', 'Ajax']
+console.log(b); // ['Mango', 'Poly', 'Ajax']
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      
                       // 1 - Методы Split и join
 
 //const message = 'Привет Citrus Hlobus';
@@ -162,11 +372,11 @@
 
                       //Функции
 
-const add = function(a, b, c) {
-    return a + b + c
-};
+// const add = function(a, b, c) {
+//     return a + b + c
+// };
 
-const result = add(1, 2, 3);
-console.log(result);  //6
+// const result = add(1, 2, 3);
+// console.log(result);  //6
 
-console.log(add(5, 10, 15)); //30
+// console.log(add(5, 10, 15)); //30
