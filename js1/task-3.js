@@ -1,34 +1,24 @@
-// Задача 2 - 2
-// Подсчет стоимости гравировки украшений
-// Напиши скрипт подсчета стоимости гравировки украшений.Для этого создай функцию calculateEngravingPrice(message = "",
-//pricePerWord = 0) принимающую строку(в строке будут только слова и пробелы)
-//и цену гравировки одного слова, и возвращающую цену гравировки всех слов в строке.
+function findLongestWord(string = ' ') {
+  const stringSplit = string.split(' ');
+  //   //May=3, the=3, force=5, be=2, with=4, you=3
+  let longestWord = '';
+  //   //.=0
 
-// Для решения этой задачи не используйте циклы.Т.е.никаких for, while, do while, for of, for in, forEach или функциональных методов.
+  for (const word of stringSplit) {
+    // console.log(word);
+    if (word.length >= longestWord.length) {
+      longestWord = word;
+    }
+  }
 
-const calculateEngravingPrice = (message = '', pricePerWord = 0) =>
-  message.split(' ').length * pricePerWord;
+  return longestWord;
+}
 
-console.log(
-  calculateEngravingPrice(
-    'Proin sociis natoque et magnis parturient montes mus',
-    10,
-  ),
-); // 80
+console.log(findLongestWord('The quick brown fox jumped over the lazy dog'));
+// 'jumped'
 
-console.log(
-  calculateEngravingPrice(
-    'Proin sociis natoque et magnis parturient montes mus',
-    20,
-  ),
-); // 160
+console.log(findLongestWord('Google do a roll'));
+// 'Google'
 
-console.log(
-  calculateEngravingPrice('Donec orci lectus aliquam est magnis', 40),
-); // 240
-
-console.log(
-  calculateEngravingPrice('Donec orci lectus aliquam est magnis', 20),
-); // 120
-
-console.log(calculateEngravingPrice('Uno', 100)); // 100
+console.log(findLongestWord('May the force be with you'));
+// 'force'
