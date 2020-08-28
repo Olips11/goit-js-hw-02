@@ -640,8 +640,8 @@
                     // 2. Стрелочные функции и arguments
 
 
-const add = (...args) => {
-    console.log(args);
-};
+// const add = (...args) => {
+//     console.log(args);
+// };
 
-add(1, 2, 3); // [1, 2, 3]
+// add(1, 2, 3); // [1, 2, 3]
