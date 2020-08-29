@@ -45,7 +45,7 @@ function isLoginValid(login, min = 4, max = 16) {
 function isLoginUnique(allLogins, login) {
   'use strict';
   // Write code under this line
-  return allLogins.includes(login) ? true : false;
+  return allLogins.includes(login) ? false : true;
 }
 
 function addLogin(allLogins, login) {
